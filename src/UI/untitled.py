@@ -1,18 +1,16 @@
-#!/usr/bin/python3.6
 # -*- coding: utf-8 -*-
-# @Time    : 2020/5/29 10:22
-# @Author  : zhang shuai
-# @Email   : 310966164@qq.com
-# @File    : loginUI.py
-# @Software: PyCharm
-import sys
 
-from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtGui import QPalette, QBrush, QPixmap
-from PyQt5.QtWidgets import QApplication
+# Form implementation generated from reading ui file 'untitled.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.0
+#
+# WARNING! All changes made in this file will be lost!
 
 
-class loginWindow(QtWidgets.QWidget):
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(418, 323)
@@ -69,20 +67,3 @@ class loginWindow(QtWidgets.QWidget):
         self.label_2.setText(_translate("Form", "密码："))
         self.loginBtn.setText(_translate("Form", "登录"))
         self.signupBtn.setText(_translate("Form", "注册"))
-
-    # 设置登录界面背景
-    def setBackground(self):
-        self.setAutoFillBackground(True)
-        palette = QPalette()
-        # 设置背景颜色
-        # palette.setColor(self.backgroundRole(), QColor(192, 253, 123))
-        # 设置背景图片
-        palette.setBrush(self.backgroundRole(), QBrush(QPixmap('source/p1.jpeg')))
-        self.setPalette(palette)
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    mainwindow = QtWidgets.QMainWindow()
-    loginWindow().setupUi(mainwindow)
-    mainwindow.show()
-    sys.exit(app.exec_())
