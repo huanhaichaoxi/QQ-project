@@ -6,6 +6,7 @@
 # @File    : loginUI.py
 # @Software: PyCharm
 import sys
+import time
 
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtGui import QPalette, QBrush, QPixmap
@@ -13,10 +14,10 @@ from PyQt5.QtWidgets import QApplication
 
 
 class loginWindow(QtWidgets.QWidget):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(418, 323)
-        self.widget = QtWidgets.QWidget(Form)
+    def setupUi(self):
+        self.setObjectName("登录QQ")
+        self.resize(420, 330)
+        self.widget = QtWidgets.QWidget(self)
         self.widget.setGeometry(QtCore.QRect(50, 150, 331, 101))
         self.widget.setObjectName("widget")
         self.gridLayout = QtWidgets.QGridLayout(self.widget)
@@ -44,7 +45,7 @@ class loginWindow(QtWidgets.QWidget):
         self.passwordEdit.setMaximumSize(QtCore.QSize(180, 30))
         self.passwordEdit.setObjectName("passwordEdit")
         self.gridLayout.addWidget(self.passwordEdit, 1, 1, 1, 1)
-        self.widget1 = QtWidgets.QWidget(Form)
+        self.widget1 = QtWidgets.QWidget(self)
         self.widget1.setGeometry(QtCore.QRect(70, 260, 271, 41))
         self.widget1.setObjectName("widget1")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.widget1)
@@ -59,12 +60,14 @@ class loginWindow(QtWidgets.QWidget):
         self.signupBtn.setObjectName("signupBtn")
         self.horizontalLayout.addWidget(self.signupBtn)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.setBackground()
+        self.retranslateUi(self)
+        QtCore.QMetaObject.connectSlotsByName(self)
+
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
+        Form.setWindowTitle(_translate("Form", "登录QQ"))
         self.label.setText(_translate("Form", "QQ号："))
         self.label_2.setText(_translate("Form", "密码："))
         self.loginBtn.setText(_translate("Form", "登录"))
@@ -74,15 +77,5 @@ class loginWindow(QtWidgets.QWidget):
     def setBackground(self):
         self.setAutoFillBackground(True)
         palette = QPalette()
-        # 设置背景颜色
-        # palette.setColor(self.backgroundRole(), QColor(192, 253, 123))
-        # 设置背景图片
-        palette.setBrush(self.backgroundRole(), QBrush(QPixmap('source/p1.jpeg')))
+        palette.setBrush(self.backgroundRole(), QBrush(QPixmap('../../source/login.jpg')))
         self.setPalette(palette)
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    mainwindow = QtWidgets.QMainWindow()
-    loginWindow().setupUi(mainwindow)
-    mainwindow.show()
-    sys.exit(app.exec_())
