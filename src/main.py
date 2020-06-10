@@ -25,4 +25,6 @@ class Controller:
         sys.exit(app.exec_())
 
 
+
+
 Controller()
