@@ -12,7 +12,8 @@ from src.UI import loginUI
 
 class Controller:
 
-    __logUI = None
+    __logUI = None      # 登录界面
+    __MainUI = None
 
     def __init__(self):
         self.__initWindow()
