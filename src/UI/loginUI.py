@@ -67,7 +67,9 @@ class loginWindow(QtWidgets.QWidget):
         self.setWindowModality(QtCore.Qt.ApplicationModal)
         QtCore.QMetaObject.connectSlotsByName(self)
 
-
+        # 绑定按钮事件
+        self.loginBtn.clicked.connect(self.loginQQ)
+        self.signupBtn.clicked.connect(self.signup)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -83,3 +85,17 @@ class loginWindow(QtWidgets.QWidget):
         palette = QPalette()
         palette.setBrush(self.backgroundRole(), QBrush(QPixmap('F:/QQ-project/source/login.png')))
         self.setPalette(palette)
+
+    # 登录按钮功能
+    def loginQQ(self):
+        username = self.idEdit.text()
+        password = self.passwordEdit.text()
+        print(username, password)
+        # 查询数据库是否存在用户及用户密码是否正确
+        pass
+
+    # 注册按钮功能
+    def signup(self):
+        print('请注册QQ...')
+        pass
+
