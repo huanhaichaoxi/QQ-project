@@ -21,6 +21,7 @@ class Controller:
     def __initWindow(self):
         app = QtWidgets.QApplication(sys.argv)
         self.__logUI = loginUI.loginWindow()
+
         self.__logUI.setupUi()
         self.__logUI.show()
         sys.exit(app.exec_())
